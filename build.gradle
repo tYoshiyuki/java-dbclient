@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.dbclient'
+version '1.0-SNAPSHOT'
+
+// Encoding
+def defaultEncoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+// Runtime
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-dbutils:commons-dbutils:1.7'
+    implementation 'mysql:mysql-connector-java:5.1.6'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.projectlombok:lombok:1.18.8'
+    testImplementation 'org.assertj:assertj-core:3.11.1'
+}
